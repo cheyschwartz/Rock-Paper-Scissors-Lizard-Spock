@@ -10,7 +10,7 @@ class Human(Player):
 
 
     def choose_gesture(self):
-        self.chosen_gesture = input("Press 0 for Rock, Press 1 for Paper, press 2 for Scissors ect..")
+        self.chosen_gesture = input("Press 0 for Rock, 1 for Paper, 2 for Scissors, 3 Lizard, 4 Spock")
         print(f"{self.name} has picked {self.gesture_list[int(self.chosen_gesture)]}")
 
 
