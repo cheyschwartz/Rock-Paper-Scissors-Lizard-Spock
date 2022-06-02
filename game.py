@@ -61,10 +61,10 @@ class Game:
                 self.player_one.score += 1
             else:
                 print("AI wins")
-                self.player_two.score +=1
+                self.player_two.score += 1
 
     def display_winners(self):
-        while self.player_one.score >= 3:
+        while self.player_one.score >= 2:
             print("Human wins the game! Game Over!")
         else:
-            print("AI wins the game! Game Over!")
+            print("AI wins this game! Game Over")
