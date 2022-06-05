@@ -7,12 +7,13 @@ import random
 
 class Game:
     def __init__(self):
-        self.player_one = Human()
-        self.player_two = AI()
+        self.player_one = None
+        self.player_two = None
 
     def run_game(self):
         self.display_welcome()
         self.display_instructions()
+        self.number_of_players()
         self.game()
         self.display_winners()
 
@@ -34,10 +35,19 @@ class Game:
                 Paper disproves Spock
                 Spock vaporizes Rock
                     """)
-    #shorcut for game logic 
-       # check to see "if" its a tie
-       # check to see "elif" player one was the winner
-       # else player 2 was the winner
+
+    def number_of_players(self):
+        player_choice = input("Press 1 to play with AI, press 2 to play with a friend or press 3 to watch an AI battle")
+        if player_choice == "1":
+            self.player_one = Human()
+            self.player_two = AI()
+        elif player_choice == "2":
+            self.player_one = Human()
+            self.player_two = Human()
+        elif player_choice == "3":
+            self.player_one = AI()
+            self.player_two = AI()
+    
     def game(self):
         while self.player_one.score < 2 and self.player_two.score < 2:
             self.player_one.choose_gesture()
@@ -64,7 +74,7 @@ class Game:
                 self.player_two.score += 1
 
     def display_winners(self):
-        while self.player_one.score >= 2:
+        if self.player_one.score >= 2:
             print("Human wins the game! Game Over!")
         else:
             print("AI wins this game! Game Over")
