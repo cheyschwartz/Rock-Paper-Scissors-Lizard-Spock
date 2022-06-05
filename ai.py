@@ -10,10 +10,6 @@ class AI(Player):
         self.score = 0
         self.name = name
 
-    # def choose_gesture(self):
-    #     self.chosen_gesture = str(random.randint(0,4))
-    #     print (f"{self.name} has picked {self.gesture_list[int(self.chosen_gesture)]}")
-
     def choose_gesture(self):
         choice = random.randint(0,4)
         self.chosen_gesture = choice
